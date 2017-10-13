@@ -6,9 +6,9 @@
 <?import javafx.scene.layout.GridPane?>
 
 <GridPane xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1"
- fx:controller="gui.intro.Main11Controller">
+ fx:controller="task3.Main11Controller">
    <children>
       <Button text="Hallo Welt" onAction="#buttonClicked" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-      <Label text="" fx:id="label" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+      <Label text="" fx:id="labello" GridPane.columnIndex="1" GridPane.rowIndex="2" />
    </children>
 </GridPane>

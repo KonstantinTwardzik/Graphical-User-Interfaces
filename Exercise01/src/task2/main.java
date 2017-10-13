@@ -1,10 +1,9 @@
+package task2;
 
 public class main
 {
     public static void main(String[] args)
     {
-        Actor actor = new Actor();
-        actor.
-
+        List.forEach(e -> System.out.println(e)); 
     }
 }

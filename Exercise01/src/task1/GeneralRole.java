@@ -1,3 +1,4 @@
+package task1;
 
 public class GeneralRole implements Role
 {
@@ -9,7 +10,7 @@ public class GeneralRole implements Role
     }
 
     @Override
-    public void play(int i, String message)
+    public void play()
     {
         System.out.println(message);
     }
