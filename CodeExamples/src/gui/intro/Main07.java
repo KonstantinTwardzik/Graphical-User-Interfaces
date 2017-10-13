@@ -11,16 +11,18 @@ import javafx.stage.Stage;
 
 public class Main07 extends Application
 {
+    @Override
     public void start(Stage primaryStage)
     {
         try
         {
             GridPane root = FXMLLoader.load(getClass().getResource("Main07.fxml"));
-//            FXMLLoader loader = new FXMLLoader(getClass().getResource("Main07.fxml"));
-//            GridPane root = (GridPane)loader.load();
-            
+            // FXMLLoader loader = new
+            // FXMLLoader(getClass().getResource("Main07.fxml"));
+            // GridPane root = (GridPane)loader.load();
+
             Scene scene = new Scene(root, 310, 70);
-            Button b = (Button)scene.lookup("#button");
+            Button b = (Button) scene.lookup("#button");
             b.setOnAction(e -> System.out.println("Hallo Welt"));
             primaryStage.setScene(scene);
             primaryStage.setTitle("Hello World");

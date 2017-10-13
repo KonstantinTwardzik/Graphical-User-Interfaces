@@ -3,19 +3,18 @@ package gui.intro;
 import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
-import javafx.scene.layout.GridPane;
+import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
 
-public class Main04 extends Application
+public class Main02 extends Application
 {
+    @Override
     public void start(Stage primaryStage)
     {
-        Label l1 = new Label("Hallo Welt");
-        Label l2 = new Label("Nochmals hallo");
-        GridPane root = new GridPane();
-        root.add(l1, 0, 0);
-        root.add(l2, 0, 1);
-        
+        Label l = new Label("Hallo Welt");
+        StackPane root = new StackPane();
+        root.getChildren().add(l);
+
         Scene scene = new Scene(root, 310, 70);
         primaryStage.setScene(scene);
         primaryStage.setTitle("Hello World");

@@ -8,16 +8,18 @@ import javafx.scene.Scene;
 import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
 
-public class Main11 extends Application
+public class Main05 extends Application
 {
+    @Override
     public void start(Stage primaryStage)
     {
         try
         {
-            GridPane root = FXMLLoader.load(getClass().getResource("Main11.fxml"));
-//            FXMLLoader loader = new FXMLLoader(getClass().getResource("Main11.fxml"));
-//            GridPane root = (GridPane)loader.load();
-            
+            GridPane root = FXMLLoader.load(getClass().getResource("Main05.fxml"));
+            // FXMLLoader loader = new
+            // FXMLLoader(getClass().getResource("Main05.fxml"));
+            // GridPane root = (GridPane)loader.load();
+
             Scene scene = new Scene(root, 310, 70);
             primaryStage.setScene(scene);
             primaryStage.setTitle("Hello World");
@@ -28,7 +30,7 @@ public class Main11 extends Application
             e.printStackTrace();
         }
     }
-    
+
     public static void main(String[] args)
     {
         launch(args);

@@ -6,14 +6,17 @@ import javafx.scene.control.Label;
 import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
 
-public class Main02 extends Application
+public class Main03 extends Application
 {
+    @Override
     public void start(Stage primaryStage)
     {
-        Label l = new Label("Hallo Welt");
+        Label l1 = new Label("Hallo Welt");
+        Label l2 = new Label("Nochmals hallo");
         StackPane root = new StackPane();
-        root.getChildren().add(l);
-        
+        root.getChildren().add(l1);
+        root.getChildren().add(l2);
+
         Scene scene = new Scene(root, 310, 70);
         primaryStage.setScene(scene);
         primaryStage.setTitle("Hello World");
