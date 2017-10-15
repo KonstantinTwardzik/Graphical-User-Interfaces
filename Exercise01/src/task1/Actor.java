@@ -9,10 +9,12 @@ public class Actor
     public void action()
     {
         for (int i1 = 0; i1 < roleList.length; i1++)
+        {
             if (roleList[i1] != null)
             {
                 roleList[i1].play();
             }
+        }
     }
 
     public void addRole(Role role)
@@ -27,4 +29,3 @@ public class Actor
         count = 0;
     }
 }
- 
