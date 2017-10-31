@@ -10,16 +10,7 @@ public class Main
         list.add("chillig");
         list.add("hat anscheindend geklappt");
 
-        list.forEach(new Executable()
-        {
-            public void execute()
-            {
-                System.out.println("Code wurde ausgeführt!");
-            }
-        });
-        
-        list.getEntries();
-
-//        list.forEach(e -> System.out.println("Hallo"));
+ 
+        list.forEach(e -> System.out.println(e));
     }
 }

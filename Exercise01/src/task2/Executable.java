@@ -2,5 +2,5 @@ package task2;
 
 public interface Executable
 {
-    void execute();
+    void execute(String str);
 }

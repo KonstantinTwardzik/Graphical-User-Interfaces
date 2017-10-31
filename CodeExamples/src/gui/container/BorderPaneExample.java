@@ -33,7 +33,7 @@ public class BorderPaneExample extends Application
         b = new Button("Center");
         BorderPane.setAlignment(b, Pos.CENTER);
         root.setCenter(b);
-        
+
         Scene scene = new Scene(root);
         primaryStage.setScene(scene);
         primaryStage.setTitle("BorderPane-Beispiel");

@@ -33,12 +33,12 @@ public class List
 
     public void forEach(Executable exec)
     {
+        System.out.println("Code wird ausgeführt ...");
         for (int i = 0; i < count; i++)
         {
-            exec.execute();
+            exec.execute(list[i]);
         }
-        System.out.println("Code wird ausgeführt ...");
-        
+       
     }
     
     public void getEntries () 

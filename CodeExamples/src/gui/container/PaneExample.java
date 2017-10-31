@@ -14,8 +14,8 @@ public class PaneExample extends Application
         for(int i = 1; i <= 10; i++)
         {
             Button b = new Button("Button " + i);
-            b.setLayoutX(i * 20);
-            b.setLayoutY(i * 20);
+            b.setLayoutX((i-1) * 20);
+            b.setLayoutY((i-1) * 20);
             root.getChildren().add(b);
         }
         
