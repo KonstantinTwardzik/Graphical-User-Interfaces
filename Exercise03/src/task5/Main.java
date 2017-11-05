@@ -18,15 +18,33 @@ public class Main
             @Override
             public void onChanged(ListChangeListener.Change<? extends String> change)
             {
-                System.out.println("Liste wurde geändert");
+                while (change.next())
+                {
+                    if (change.wasUpdated())
+                    {
+                                           
+                    }
+                    
+                    else if (change.wasReplaced())
+                    {
+                        
+                    }
+                    else if (change.wasRemoved())
+                    {
+                        System.out.println(change.getRemovedSize());
+                    }
+                    else if (change.wasAdded())
+                    {
+                        System.out.println("AddedSize: " + change.getAddedSize() + ": " + change.getAddedSubList());
+                        System.out.println("AddedObject at position: " + change.toString());                                            
+                    }
+                }
             }
         });
 
         observableList.add("Element 1");
-        System.out.println("Größe: " + observableList.size());
+        observableList.add("Element 2");
+        observableList.addAll("Element 1", "Element 3");
 
-        // ändert auch observableList, erzeugt aber kein Ereignis
-        list.add("Element 2");
-        System.out.println("Größe: " + observableList.size());
     }
 }
