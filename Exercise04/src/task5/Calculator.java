@@ -5,7 +5,7 @@ import java.io.IOException;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
-import javafx.scene.layout.Pane;
+import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
 
 public class Calculator extends Application
@@ -15,7 +15,7 @@ public class Calculator extends Application
     {
         try
         {
-            Pane root = FXMLLoader.load(getClass().getResource("Calculator.fxml"));
+            GridPane root = FXMLLoader.load(getClass().getResource("Calculator.fxml"));
 
             Scene scene = new Scene(root);
             primaryStage.setScene(scene);

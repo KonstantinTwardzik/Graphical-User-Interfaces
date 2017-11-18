@@ -1,8 +1,6 @@
 package task1;
 
 import javafx.application.Application;
-import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
 import javafx.scene.Scene;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.Hyperlink;
@@ -15,6 +13,7 @@ public class HyperlinkExample extends Application
     @Override
     public void start(Stage primaryStage)
     {
+        int counter = 0;
         GridPane root = new GridPane();
         Scene scene = new Scene(root);
 
@@ -40,22 +39,30 @@ public class HyperlinkExample extends Application
         primaryStage.setTitle("Hyperlink");
         primaryStage.show();
 
-        hyperLink.setOnAction(new EventHandler<ActionEvent>()
-        {
-            private int counter;
+        // hyperLink.setOnAction(new EventHandler<ActionEvent>()
+        // {
+        // private int counter;
+        //
+        // @Override
+        // public void handle(ActionEvent event)
+        // {
+        // counter++;
+        // label.setText("Hallo Welt zum " + counter + ". mal!");
+        //
+        // }
+        // });
 
-            @Override
-            public void handle(ActionEvent event)
-            {
-                counter++;
-                label.setText("Hallo Welt zum " + counter + ". mal!");
+        hyperLink.setOnAction(e -> increaseCounterAndUpdate(counter, label));
 
-            }
-        });
+        hyperLink.visitedProperty().bindBidirectional(visited.selectedProperty());
+        hyperLink.underlineProperty().bindBidirectional(underlined.selectedProperty());
+        hyperLink.wrapTextProperty().bindBidirectional(lineBreak.selectedProperty());
+    }
 
-        hyperLink.visitedProperty().bind(visited.selectedProperty());
-        hyperLink.underlineProperty().bind(underlined.selectedProperty());
-        hyperLink.wrapTextProperty().bind(lineBreak.selectedProperty());
+    public void increaseCounterAndUpdate(int counter, Label label)
+    {
+        counter++;
+        label.setText("Hallo Welt zum " + counter + ". mal!");
     }
 
     public static void main(String[] args)
