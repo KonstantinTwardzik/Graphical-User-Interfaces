@@ -2,6 +2,7 @@ package gui.country.combo;
 
 public class Country
 {
+
     private String name;
 
     private String capital;
@@ -10,12 +11,15 @@ public class Country
 
     private long area;
 
+    private short density;
+
     public Country(String name, String capital, long people, long area)
     {
         this.name = name;
         this.capital = capital;
         this.people = people;
         this.area = area;
+        this.density = (short) Math.round((float)people / (float)area);
     }
 
     public String getName()
@@ -37,4 +41,16 @@ public class Country
     {
         return area;
     }
+
+    public short getDensity()
+    {
+        return density;
+    }
+
+    @Override
+    public String toString()
+    {
+        return name;
+    }
+
 }

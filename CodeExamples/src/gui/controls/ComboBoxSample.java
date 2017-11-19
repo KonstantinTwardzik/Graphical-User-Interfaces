@@ -41,6 +41,8 @@ public class ComboBoxSample extends Application
         stage.setScene(scene);
         stage.setTitle("ComboBoxDemo");
 
+        
+        
         comboBox1.setOnAction((ev) ->
         {
             // String option = comboBox1.getSelectionModel().getSelectedItem();
@@ -52,6 +54,8 @@ public class ComboBoxSample extends Application
         {
             status2.setText(oldValue + " => " + newValue);
         });
+        
+        
         comboBox2.setOnAction((ev) ->
         {
             // Integer i = comboBox2.getSelectionModel().getSelectedItem();
@@ -59,14 +63,18 @@ public class ComboBoxSample extends Application
             int index = comboBox2.getSelectionModel().getSelectedIndex();
             status1.setText("selected " + i + " (index " + index + ")");
         });
+        
         comboBox2.valueProperty().addListener((ov, oldValue, newValue) ->
         {
             status2.setText(oldValue + " => " + newValue);
         });
+        
         comboBox2.setValue(1);
         binding.textProperty().bind(comboBox1.valueProperty());
         b.setOnAction(e -> data2.add(data2.size() + 1));
         stage.show();
+        
+        
     }
 
     public static void main(String[] args)
