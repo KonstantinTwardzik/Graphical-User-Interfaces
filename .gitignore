@@ -1,5 +1,6 @@
 # Eclipse
-.metadate/
+.metadata/
+.recommenders/
 
 # Compiled class file
 *.class
