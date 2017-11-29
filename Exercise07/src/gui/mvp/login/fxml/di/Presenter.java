@@ -6,12 +6,6 @@ public class Presenter
 
     private Model model;
 
-    private final int errorConstant = 2;
-
-    private int errorCount;
-
-    private String lastLoginName;
-
     public Presenter()
     {
     }
@@ -39,32 +33,16 @@ public class Presenter
         }
         else
         {
-            if (!countTries(loginName))
+            if (!model.countTries(loginName))
             {
                 view.showLoginError();
             }
-
-        }
-    }
-
-    public Boolean countTries(String loginName)
-    {
-        Boolean extraError = false;
-        if (loginName.equals(lastLoginName))
-        {
-            errorCount++;
-            if (errorCount == errorConstant)
+            else
             {
-                errorCount = 0;
                 view.showExtraLoginError();
-                extraError = true;
             }
+
         }
-        else
-        {
-            lastLoginName = loginName;
-            errorCount = 0;
-        }
-        return extraError;
     }
+
 }

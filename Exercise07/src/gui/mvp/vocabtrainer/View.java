@@ -49,4 +49,9 @@ public class View
         status.setText("Die Lösung war falsch. Sie können es nochmal versuchen.");
     }
 
+    public void init()
+    {
+        this.status.setWrapText(true); // funzt nicht
+        this.setNewWord();
+    }
 }

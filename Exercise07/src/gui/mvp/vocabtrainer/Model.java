@@ -2,7 +2,6 @@ package gui.mvp.vocabtrainer;
 
 import java.util.ArrayList;
 import java.util.HashMap;
-
 import java.util.Random;
 
 public class Model
@@ -20,7 +19,6 @@ public class Model
         wordList.put("Maus", "mouse");
         wordList.put("Thomas", "stinkt");
         keys = new ArrayList<String>(wordList.keySet());
-
     }
 
     public boolean isOkay(String englishWord, String germanWord)

@@ -5,12 +5,12 @@ public class Presenter
     private Model model;
 
     private View view;
-    
+
     public void setView(View view)
     {
         this.view = view;
     }
-    
+
     public void setModel(Model model)
     {
         this.model = model;
@@ -30,6 +30,6 @@ public class Presenter
 
     public void setNewWord()
     {
-        view.setNewView(model.getNewWord());       
+        view.setNewView(model.getNewWord());
     }
 }
