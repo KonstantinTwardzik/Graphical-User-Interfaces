@@ -2,52 +2,82 @@ package gui.mvp.login;
 
 import java.time.LocalDateTime;
 
-import javafx.event.ActionEvent;
-import javafx.fxml.FXML;
-import javafx.scene.control.*;
+import javafx.event.*;
+import javafx.geometry.Insets;
+import javafx.scene.layout.*;
 import javafx.scene.paint.Color;
+import javafx.scene.control.*;
 
-public class ViewController
+public class View
 {
     private Presenter presenter;
+
+    private GridPane pane;
+
+    private TextField loginName;
+
+    private PasswordField password;
+
+    private Label status;
+
+    private TextArea statusLog;
 
     private String name;
 
     private String pw;
 
-    @FXML
-    private TextField loginName;
-
-    @FXML
-    private PasswordField password;
-
-    @FXML
-    private Label status;
-
-    @FXML
-    private TextArea statusLog;
-
-    public ViewController()
-    {
-    }
-
-    public void setPresenter(Presenter presenter)
+    public View(Presenter presenter)
     {
         this.presenter = presenter;
     }
-    
-    public void clearLog(ActionEvent e)
+
+    public void initView()
+    {
+        pane = new GridPane();
+        Insets insets = new Insets(5);
+        pane.setPadding(insets);
+        pane.setHgap(2);
+        pane.setVgap(5);
+        pane.add(new Label("Login-Kennung:"), 0, 0);
+        loginName = new TextField();
+        pane.add(loginName, 1, 0);
+        pane.add(new Label("Passwort:"), 0, 1);
+        password = new PasswordField();
+        pane.add(password, 1, 1);
+        Button b = new Button("Login");
+        pane.add(b, 0, 2, 2, 1);
+        status = new Label();
+        pane.add(status, 0, 3, 2, 1);
+        statusLog = new TextArea();
+        pane.add(statusLog, 0, 4, 3, 3);
+        Button b1 = new Button("Liste löschen");
+        pane.add(b1, 0, 8);
+
+        EventHandler<ActionEvent> h = e -> handle();
+        EventHandler<ActionEvent> h2 = e -> clearLog();
+        loginName.setOnAction(h);
+        password.setOnAction(h);
+        b.setOnAction(h);
+        b1.setOnAction(h2);
+    }
+
+    private void clearLog()
     {
         statusLog.setText("");
     }
 
-    public void handle(ActionEvent e)
+    private void handle()
     {
         name = loginName.getText();
         pw = password.getText();
         name = name.trim();
         pw = pw.trim();
         presenter.login(name, pw);
+    }
+
+    public Pane getUI()
+    {
+        return pane;
     }
 
     public void resetInput()
@@ -94,4 +124,5 @@ public class ViewController
         status.setTextFill(Color.RED);
         status.setUnderline(true);
     }
+
 }

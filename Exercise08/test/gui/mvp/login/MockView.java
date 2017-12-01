@@ -1,35 +1,43 @@
 package gui.mvp.login;
 
-import gui.mvp.login.Presenter;
-
 public class MockView extends View
 {
-    private int resetInputCalls, showOkayMessageCalls,
-                showInputErrorCalls, showLoginErrorCalls;
-    
+    private int resetInputCalls, showOkayMessageCalls, showInputErrorCalls,
+                    showLoginErrorCalls, showExtraLoginErrorCalls;
+
     public MockView(Presenter p)
     {
         super(p);
     }
-    
+
+    @Override
     public void resetInput()
     {
         resetInputCalls++;
     }
-    
+
+    @Override
     public void showOkayMessage()
     {
         showOkayMessageCalls++;
     }
 
+    @Override
     public void showInputError()
     {
         showInputErrorCalls++;
     }
 
+    @Override
     public void showLoginError()
     {
         showLoginErrorCalls++;
+    }
+
+    @Override
+    public void showExtraLoginError()
+    {
+        showExtraLoginErrorCalls++;
     }
 
     public int getResetInputCalls()
@@ -50,5 +58,10 @@ public class MockView extends View
     public int getShowLoginErrorCalls()
     {
         return showLoginErrorCalls;
+    }
+
+    public int getShowExtraLoginErrorCalls()
+    {
+        return showExtraLoginErrorCalls;
     }
 }

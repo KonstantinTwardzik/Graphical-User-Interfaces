@@ -1,26 +1,46 @@
 package gui.mvp.login;
 
-import gui.mvp.login.Model;
-
 public class MockModel extends Model
 {
-    private boolean returnValue;
+    private boolean isOkayReturnValue;
+
+    private boolean isNotOkayReturnValue;
+
     private int okayCalls;
-    
+
+    private int errorCalls;
+
     @Override
     public boolean isOkay(String loginName, String password)
     {
         okayCalls++;
-        return returnValue;
+        return isOkayReturnValue;
     }
 
-    public void setReturnValue(boolean b)
+    public void setOkayReturnValue(boolean b)
     {
-        returnValue = b;
+        isOkayReturnValue = b;
     }
 
     public int getOkayCalls()
     {
         return okayCalls;
+    }
+
+    public void setNotOkayReturnValue(boolean b)
+    {
+        isNotOkayReturnValue = b;
+    }
+
+    @Override
+    public boolean countTries(String loginName)
+    {
+        errorCalls++;
+        return isNotOkayReturnValue;
+    }
+
+    public int getErrorCalls()
+    {
+        return errorCalls;
     }
 }

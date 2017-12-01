@@ -1,11 +1,17 @@
 package gui.mvp.login;
 
-import java.util.*;
+import java.util.HashMap;
 
 public class Model
 {
     private HashMap<String, String> userList;
-    
+
+    private final int errorConstant = 2;
+
+    private int errorCount;
+
+    private String lastLoginName;
+
     public Model()
     {
         userList = new HashMap<>();
@@ -20,5 +26,26 @@ public class Model
     public boolean isOkay(String loginName, String password)
     {
         return password.equals(userList.get(loginName));
+    }
+
+    public boolean countTries(String loginName)
+    {
+        boolean extraError = false;
+        if (loginName.equals(lastLoginName))
+        {
+            errorCount++;
+            if (errorCount == errorConstant)
+            {
+                errorCount = 0;
+
+                extraError = true;
+            }
+        }
+        else
+        {
+            lastLoginName = loginName;
+            errorCount = 0;
+        }
+        return extraError;
     }
 }
