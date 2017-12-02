@@ -28,9 +28,15 @@ public class Model
         return password.equals(userList.get(loginName));
     }
 
+<<<<<<< Updated upstream
     public boolean countTries(String loginName)
     {
         boolean extraError = false;
+=======
+    public Boolean countTries(String loginName)
+    {
+        Boolean extraError = false;
+>>>>>>> Stashed changes
         if (loginName.equals(lastLoginName))
         {
             errorCount++;

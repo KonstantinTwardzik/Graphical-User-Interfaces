@@ -25,13 +25,22 @@ public class ModelTest
     @Test
     public void testWrongName()
     {
-        assertFalse("Test für falschen Namen", model.isOkay("xxxwolf", "password4"));
+        assertFalse("Test für falschen Namen", model.isOkay("wrongName", "password4"));
     }
 
     @Test
     public void testWrongPassword()
     {
-        assertFalse("Test für falsches Passwort", model.isOkay("wolf", "password1"));
+        assertFalse("Test für falsches Passwort", model.isOkay("wolf", "wrongPassword"));
+    }
+
+    @Test
+    public void testThreeTimesWrongPassword()
+    {
+        model.isOkay("wolf", "wrongPassword");
+        model.isOkay("wolf", "wrongPassword");
+        model.isOkay("wolf", "wrongPassword");
+        assertTrue("Test für 3x falsches Passwort", model.isOkay("wolf", "wrongPassword") );
     }
 
     @Test
