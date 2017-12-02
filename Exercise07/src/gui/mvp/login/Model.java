@@ -25,13 +25,21 @@ public class Model
 
     public boolean isOkay(String loginName, String password)
     {
+        return password.equals(userList.get(loginName));
+    }
+
+    public boolean countTries(String loginName)
+    {
+        boolean extraError = false;
+
         if (loginName.equals(lastLoginName))
         {
             errorCount++;
             if (errorCount == errorConstant)
             {
                 errorCount = 0;
-                countTries();
+
+                extraError = true;
             }
         }
         else
@@ -39,12 +47,6 @@ public class Model
             lastLoginName = loginName;
             errorCount = 0;
         }
-        return password.equals(userList.get(loginName));
-
-    }
-
-    public boolean countTries()
-    {
-        return true;
+        return extraError;
     }
 }

@@ -25,6 +25,9 @@ public class TestView
         b = new Button("showOkayMessage()");
         b.setOnAction(e -> view.showOkayMessage());
         buttons.getChildren().add(b);
+        b = new Button("showExtraLoginError()");
+        b.setOnAction(e -> view.showExtraLoginError());
+        buttons.getChildren().add(b);
         vbox.getChildren().add(buttons);
         
         output = new Label();
