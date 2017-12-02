@@ -41,6 +41,7 @@ public class ModelTest
         model.isOkay("wolf", "wrongPassword");
         model.isOkay("wolf", "wrongPassword");
         assertTrue("Test für 3x falsches Passwort", model.isOkay("wolf", "wrongPassword") );
+<<<<<<< Updated upstream
     }
 
     @Test
@@ -49,5 +50,7 @@ public class ModelTest
         model.countTries("d");
         model.countTries("d");
         assertTrue("Test für 3x falsches Passwort", model.countTries("d"));
+=======
+>>>>>>> Stashed changes
     }
 }
