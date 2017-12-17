@@ -26,7 +26,7 @@ public class ShapesLayout extends Application
 //        root.add(r2, 1, 0);
 //        root.add(l, 2, 0);
 //        TilePane root = new TilePane(r1, r2, l);
-        primaryStage.setTitle("ShapesLayout");
+//        primaryStage.setTitle("ShapesLayout");
         Scene scene = new Scene(root);
         primaryStage.setScene(scene);
         primaryStage.show();
