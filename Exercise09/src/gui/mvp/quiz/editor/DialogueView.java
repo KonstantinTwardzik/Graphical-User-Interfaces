@@ -175,6 +175,7 @@ public class DialogueView extends GridPane
     public String getQuestion()
     {
         return textArea.getText();
+        return textArea.getText().trim();
     }
 
     public String[] getAnswers()
@@ -184,6 +185,7 @@ public class DialogueView extends GridPane
         for (int i = 0; i < answerList.size(); i++)
         {
             returnArray[i] = answerList.get(i).getText();
+            returnArray[i] = answerList.get(i).getText().trim();
         }
         return returnArray;
     }
