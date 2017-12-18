@@ -1,6 +1,7 @@
 package gui.mvp.quiz.editor;
 
 import java.util.ArrayList;
+
 import javafx.geometry.Insets;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
@@ -174,7 +175,6 @@ public class DialogueView extends GridPane
 
     public String getQuestion()
     {
-        return textArea.getText();
         return textArea.getText().trim();
     }
 
@@ -184,7 +184,6 @@ public class DialogueView extends GridPane
 
         for (int i = 0; i < answerList.size(); i++)
         {
-            returnArray[i] = answerList.get(i).getText();
             returnArray[i] = answerList.get(i).getText().trim();
         }
         return returnArray;
