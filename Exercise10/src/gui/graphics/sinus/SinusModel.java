@@ -19,7 +19,7 @@ public class SinusModel
 
     public void setCoordinateList()
     {
-        for (int i = 0; i < (64 * 30); i++)
+        for (int i = 0; i < (64 * 18); i++)
         {
             int j = i * 10;
             double[] coordinate = new double[2];
