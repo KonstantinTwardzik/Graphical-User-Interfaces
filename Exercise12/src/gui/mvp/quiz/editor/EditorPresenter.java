@@ -8,8 +8,8 @@ import gui.mvp.quiz.main.MainPresenter;
 import gui.mvp.quiz.model.Model;
 import gui.mvp.quiz.model.Question;
 import javafx.scene.control.Alert;
-import javafx.scene.control.ButtonType;
 import javafx.scene.control.Alert.AlertType;
+import javafx.scene.control.ButtonType;
 import javafx.scene.layout.GridPane;
 
 public class EditorPresenter
@@ -19,7 +19,7 @@ public class EditorPresenter
     private EditorView editorView;
 
     private DialogueView dialogueView;
-    
+
     private UndoRedoManager undoRedoManager;
 
     private Model model;
@@ -67,7 +67,7 @@ public class EditorPresenter
     {
         mainPresenter.hideDialogueStage();
     }
-    
+
     private void nothingSelectedWarning()
     {
         Alert nothingSelectedAlert = new Alert(AlertType.INFORMATION);
@@ -122,9 +122,9 @@ public class EditorPresenter
             Question newQuestion = new Question(question, answers, indexOfCorrectAnswer);
             model.addQuestion(newQuestion);
             mainPresenter.hideDialogueStage();
-            undoRedoQuestion action = new undoRedoQuestion();
-            undoRedoManager.addAction(action);
-            action.redo;
+            // undoRedoQuestion action = new undoRedoQuestion();
+            // undoRedoManager.addAction(action);
+            // action.redo;
         }
         else
         {
@@ -132,7 +132,7 @@ public class EditorPresenter
         }
 
     }
-    
+
     public void deleteQuestion()
     {
         int itemIndex = editorView.getSelectedItemIndex();
@@ -164,10 +164,10 @@ public class EditorPresenter
             nothingSelectedWarning();
         }
     }
-    
-    public void addUndoAction (int itemIndex)
-    {        
-        //undoRedoManager.addAction(action);
+
+    public void addUndoAction(int itemIndex)
+    {
+        // undoRedoManager.addAction(action);
     }
 
 }
